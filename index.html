@@ -3,131 +3,181 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miss Pig & Kermit 💕</title>
+<title>4 Meses com Meu Kermit 💕</title>
 
 <style>
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ffb6c1, #98fb98);
-    color: #333;
+    background: linear-gradient(135deg, #ffd6e8, #c8f7c5);
     text-align: center;
-}
-
-header {
-    padding: 60px 20px;
-    color: white;
-}
-
-h1 {
-    font-size: 40px;
+    color: #333;
+    overflow-x: hidden;
 }
 
 .section {
-    background: white;
-    margin: 30px auto;
-    padding: 30px;
-    width: 90%;
-    max-width: 700px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px 20px;
+}
+
+h1 {
+    font-size: 38px;
 }
 
 button {
     background: #ff69b4;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
     color: white;
-    border-radius: 20px;
     cursor: pointer;
-    margin-top: 15px;
+    font-size: 16px;
 }
 
 button:hover {
     background: #ff1493;
 }
 
-input[type="radio"] {
-    margin: 10px;
+.hidden {
+    display: none;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 footer {
     margin: 40px;
-    color: white;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Miss Pig & Kermit 🐸💗</h1>
-    <p>O nosso show de amor</p>
-</header>
-
-<div class="section">
-    <h2>📖 Nossa História</h2>
-    <p>
-        Tudo começou em <b>[COLOCA A DATA AQUI]</b>...
-        Desde então, Miss Pig e Kermit vivem o episódio mais lindo de todos:
-        uma história cheia de risadas, carinho e muito amor.
-    </p>
+<div class="section" id="home">
+    <h1>Há 4 meses eu encontrei o meu sapo favorito 🐸💗</h1>
+    <p>08 de novembro de 2025 — o começo do nosso episódio favorito.</p>
+    <button onclick="mostrarHistoria()">Entrar na nossa história</button>
 </div>
 
-<div class="section">
-    <h2>🧠 Quiz: Você me conhece mesmo?</h2>
+<div class="section hidden" id="historia">
 
-    <p>1️⃣ Quem é mais dramático?</p>
-    <input type="radio" name="q1" value="0"> Miss Pig<br>
-    <input type="radio" name="q1" value="1"> Kermit<br>
+    <div class="card">
+        <h2>💗 Mês 1 — O Começo</h2>
+        <p>Foi aqui que tudo começou.  
+        Sem roteiro, sem ensaio… só sentimento.</p>
+    </div>
 
-    <p>2️⃣ Quem fala "tô com saudade" primeiro?</p>
-    <input type="radio" name="q2" value="1"> Miss Pig<br>
-    <input type="radio" name="q2" value="0"> Kermit<br>
+    <div class="card">
+        <h2>😂 Mês 2 — Já estávamos assim</h2>
+        <p>Se zuando. Rindo. Dramáticos.  
+        Oficialmente insuportavelmente apaixonados.</p>
+    </div>
 
-    <p>3️⃣ Nosso programa favorito é:</p>
-    <input type="radio" name="q3" value="1"> Ficar juntos fazendo nada<br>
-    <input type="radio" name="q3" value="0"> Dormir cedo<br>
+    <div class="card">
+        <h2>🐸 Mês 3 — Nosso Jeitinho</h2>
+        <p>
+        Quem é mais dramático? (não vamos comentar 👀)  
+        Quem manda mais mensagem?  
+        Quem fala primeiro “tô com saudade”?  
+        E principalmente… quem começa a se zuar?
+        </p>
+    </div>
 
-    <br>
-    <button onclick="verResultado()">Ver Resultado 💘</button>
+    <div class="card">
+        <h2>💕 Mês 4 — Agora</h2>
+        <p>
+        4 meses depois, Arthur…  
+        eu ainda escolho você todos os dias.  
+        E como você mesmo diz:
+        <br><br>
+        <b>"Te amo pô, não tem jeito."</b>
+        </p>
+    </div>
+
+    <button onclick="mostrarQuiz()">Próximo 💘</button>
+</div>
+
+<div class="section hidden" id="quiz">
+    <h2>🐸 Você é mesmo o meu Kermit?</h2>
+
+    <p>Quem é mais dramático?</p>
+    <input type="radio" name="q1" value="1"> Miss Pig<br>
+    <input type="radio" name="q1" value="0"> Arthur<br><br>
+
+    <p>Qual é nossa principal linguagem do amor?</p>
+    <input type="radio" name="q2" value="1"> Se zuar<br>
+    <input type="radio" name="q2" value="0"> Ficar sério<br><br>
+
+    <button onclick="verResultado()">Ver resultado</button>
 
     <p id="resultado"></p>
+
+    <br>
+    <button onclick="mostrarFinal()">Última página 💚</button>
 </div>
 
-<div class="section">
-    <h2>💌 Uma mensagem pra você</h2>
-    <p>
-        Obrigada por ser meu Kermit.
-        Nosso amor é o meu episódio favorito da vida.
-        Que o nosso show nunca termine. 💚
-    </p>
+<div class="section hidden" id="final">
+    <div class="card">
+        <h2>💌 Uma coisa é certa...</h2>
+        <p>
+        Se em 4 meses você me fez sentir tudo isso…  
+        eu mal posso esperar pela próxima temporada.  
+        <br><br>
+        Miss Pig & Arthur — Temporada infinita.
+        </p>
+
+        <button onclick="renovar()">Renovar contrato?</button>
+
+        <p id="contrato"></p>
+    </div>
 </div>
 
 <footer>
-    Feito com amor por Miss Pig 🐷💕
+    Feito com amor pela sua Miss Pig 🐷💕
 </footer>
 
 <script>
+function mostrarHistoria() {
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("historia").classList.remove("hidden");
+}
+
+function mostrarQuiz() {
+    document.getElementById("historia").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
+}
+
+function mostrarFinal() {
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("final").classList.remove("hidden");
+}
+
 function verResultado() {
     let pontos = 0;
     let q1 = document.querySelector('input[name="q1"]:checked');
     let q2 = document.querySelector('input[name="q2"]:checked');
-    let q3 = document.querySelector('input[name="q3"]:checked');
 
     if (q1) pontos += parseInt(q1.value);
     if (q2) pontos += parseInt(q2.value);
-    if (q3) pontos += parseInt(q3.value);
 
     let resultado = document.getElementById("resultado");
 
-    if (pontos === 3) {
-        resultado.innerHTML = "🐸💚 Você me conhece perfeitamente! É praticamente coautor da nossa história!";
-    } else if (pontos === 2) {
-        resultado.innerHTML = "💗 Quase lá! Você é bom, mas ainda precisa rever alguns episódios.";
+    if (pontos === 2) {
+        resultado.innerHTML = "🐸💗 Você é oficialmente o Kermit perfeito!";
     } else {
-        resultado.innerHTML = "😂 Ihhh… acho que precisa assistir mais o nosso show!";
+        resultado.innerHTML = "😂 Precisa rever nossos episódios imediatamente!";
     }
+}
+
+function renovar() {
+    document.getElementById("contrato").innerHTML = 
+    "💚 Contrato vitalício assinado. Te amo pô, não tem jeito.";
 }
 </script>
 
