@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miss Pig & Arthur 💕</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ffe6f0, #d4f8d4);
+    color: #333;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+    transition: 0.8s ease;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    background: #ff4da6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff1a8c;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 20px;
+}
+
+.gallery img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 10px;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+#contador {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Música -->
+<audio autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<section id="home">
+    <h1>Há 4 meses eu encontrei o meu sapo favorito 🐸💗</h1>
+    <p>08 de novembro de 2025 — o começo do nosso episódio favorito.</p>
+    <div id="contador"></div>
+    <button onclick="next('historia')">Entrar na nossa história</button>
+</section>
+
+<section id="historia" class="hidden">
+    <div class="card">
+        <h2>Nossa Linha do Tempo</h2>
+        <p><b>Mês 1:</b> Tudo começou sem roteiro… só sentimento.</p>
+        <p><b>Mês 2:</b> Oficialmente dramáticos e inseparáveis.</p>
+        <p><b>Mês 3:</b> Se zuar virou nossa linguagem do amor 😂</p>
+        <p><b>Mês 4:</b> Arthur… eu ainda escolho você todos os dias.</p>
+        <br>
+        <p><i>"Te amo pô, não tem jeito."</i></p>
+    </div>
+    <button onclick="next('galeria')">Ver nossas fotos 📸</button>
+</section>
+
+<section id="galeria" class="hidden">
+    <h2>Nossos Momentos</h2>
+    <div class="gallery">
+        <img src="foto1.jpg">
+        <img src="foto2.jpg">
+        <img src="foto3.jpg">
+    </div>
+    <button onclick="next('quiz')">Quiz do Amor 🧠</button>
+</section>
+
+<section id="quiz" class="hidden">
+    <div class="card">
+        <h2>Você é mesmo o meu Kermit?</h2>
+
+        <p>Qual é nossa principal linguagem do amor?</p>
+        <input type="radio" name="q1" value="1"> Se zuar<br>
+        <input type="radio" name="q1" value="0"> Ficar sério<br><br>
+
+        <p>Quem é mais dramático?</p>
+        <input type="radio" name="q2" value="1"> Miss Pig<br>
+        <input type="radio" name="q2" value="0"> Arthur<br><br>
+
+        <button onclick="resultado()">Ver Resultado</button>
+        <p id="resposta"></p>
+    </div>
+    <button onclick="next('final')">Última Página 💚</button>
+</section>
+
+<section id="final" class="hidden">
+    <div class="card">
+        <h2>Temporada Infinita</h2>
+        <p>
+        Se em 4 meses você me fez sentir tudo isso…  
+        eu mal posso esperar pelo resto da nossa vida.
+        </p>
+        <button onclick="contrato()">Renovar contrato?</button>
+        <p id="contrato"></p>
+    </div>
+</section>
+
+<footer>
+Miss Pig & Arthur — Desde 08/11/2025 💕
+</footer>
+
+<script>
+function next(id) {
+    document.querySelectorAll("section").forEach(sec => sec.classList.add("hidden"));
+    document.getElementById(id).classList.remove("hidden");
+}
+
+function resultado() {
+    let pontos = 0;
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+
+    if (q1) pontos += parseInt(q1.value);
+    if (q2) pontos += parseInt(q2.value);
+
+    let resposta = document.getElementById("resposta");
+
+    if (pontos === 2) {
+        resposta.innerHTML = "🐸💗 Você é oficialmente o Kermit perfeito!";
+    } else {
+        resposta.innerHTML = "😂 Precisa rever nossos episódios!";
+    }
+}
+
+function contrato() {
+    document.getElementById("contrato").innerHTML =
+    "💚 Contrato vitalício assinado. Te amo pô, não tem jeito.";
+}
+
+/* Contador */
+const dataInicio = new Date("2025-11-08T00:00:00");
+
+function atualizarContador() {
+    const agora = new Date();
+    const diff = agora - dataInicio;
+
+    const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const horas = Math.floor(diff / (1000 * 60 * 60));
+    const minutos = Math.floor(diff / (1000 * 60));
+
+    document.getElementById("contador").innerHTML =
+    "Estamos juntos há " + dias + " dias 💕";
+}
+
+setInterval(atualizarContador, 1000);
+</script>
+
+</body>
+</html>
