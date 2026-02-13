@@ -49,70 +49,92 @@ button:hover {
     max-width: 600px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: left;
 }
 
 footer {
     margin: 40px;
+}
+input[type="text"], input[type="radio"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="section" id="home">
-    <h1>Há 4 meses eu encontrei o meu sapo favorito 🐸💗</h1>
-    <p>08 de novembro de 2025 — o começo do nosso episódio favorito.</p>
+<!-- Tela de senha -->
+<div class="section" id="senha">
+    <h1>💖 Para entrar na nossa história...</h1>
+    <p>Digite a data que nos conhecemos:</p>
+    <input type="text" id="inputSenha" placeholder="dd/mm/aaaa">
+    <br><br>
+    <button onclick="verificarSenha()">Entrar</button>
+    <p id="erroSenha" style="color:red; margin-top:10px;"></p>
+</div>
+
+<!-- Home -->
+<div class="section hidden" id="home">
+    <h1>🐸💗 Há 4 meses eu encontrei o meu sapo favorito</h1>
+    <p>28 de setembro de 2025 — o começo do nosso episódio favorito.</p>
     <button onclick="mostrarHistoria()">Entrar na nossa história</button>
 </div>
 
+<!-- História -->
 <div class="section hidden" id="historia">
-
     <div class="card">
-        <h2>💗 Mês 1 — O Começo</h2>
-        <p>Foi aqui que tudo começou.  
-        Sem roteiro, sem ensaio… só sentimento.</p>
+        <h2>💗 28/09/2025 — Primeiro encontro</h2>
+        <p>O início de tudo. Emoção, risadas e aquele frio na barriga que não se esquece.</p>
     </div>
 
     <div class="card">
-        <h2>😂 Mês 2 — Já estávamos assim</h2>
-        <p>Se zuando. Rindo. Dramáticos.  
-        Oficialmente insuportavelmente apaixonados.</p>
+        <h2>🏐 19/10/2025 — Vôlei após o primeiro encontro</h2>
+        <p>Um momento divertido e leve, rindo juntos e aproveitando cada instante.</p>
     </div>
 
     <div class="card">
-        <h2>🐸 Mês 3 — Nosso Jeitinho</h2>
-        <p>
-        Quem é mais dramático? (não vamos comentar 👀)  
-        Quem manda mais mensagem?  
-        Quem fala primeiro “tô com saudade”?  
-        E principalmente… quem começa a se zuar?
-        </p>
+        <h2>🌅 26/10/2025 — Segundo encontro com Victor e Sarah</h2>
+        <p>O pôr do sol na praia e aquela sensação de que tudo fazia sentido.</p>
     </div>
 
     <div class="card">
-        <h2>💕 Mês 4 — Agora</h2>
-        <p>
-        4 meses depois, Arthur…  
-        eu ainda escolho você todos os dias.  
-        E como você mesmo diz:
-        <br><br>
-        <b>"Te amo pô, não tem jeito."</b>
-        </p>
+        <h2>💍 Pedido da aliança — Dezembro/2025</h2>
+        <p>Um marco inesquecível, mostrando que nossa história só cresce e se fortalece.</p>
     </div>
 
     <button onclick="mostrarQuiz()">Próximo 💘</button>
 </div>
 
+<!-- Quiz -->
 <div class="section hidden" id="quiz">
-    <h2>🐸 Você é mesmo o meu Kermit?</h2>
+    <h2>🐸 Teste do Kermit</h2>
 
-    <p>Quem é mais dramático?</p>
-    <input type="radio" name="q1" value="1"> Miss Pig<br>
-    <input type="radio" name="q1" value="0"> Arthur<br><br>
+    <p>1️⃣ Qual foi o primeiro filme que assistimos juntos?</p>
+    <input type="radio" name="q1" value="1"> Masterchef<br>
+    <input type="radio" name="q1" value="0"> Diário de uma Paixão<br>
+    <input type="radio" name="q1" value="0"> Guerra Mundial Z<br><br>
 
-    <p>Qual é nossa principal linguagem do amor?</p>
-    <input type="radio" name="q2" value="1"> Se zuar<br>
-    <input type="radio" name="q2" value="0"> Ficar sério<br><br>
+    <p>2️⃣ Quem falou “eu te amo” primeiro?</p>
+    <input type="radio" name="q2" value="1"> Ele<br>
+    <input type="radio" name="q2" value="0"> Ela<br>
+    <input type="radio" name="q2" value="0"> Ambos<br>
+    <input type="radio" name="q2" value="0"> Ninguém<br><br>
+
+    <p>3️⃣ Qual a data da primeira mensagem?</p>
+    <input type="radio" name="q3" value="0"> 01/10/2025<br>
+    <input type="radio" name="q3" value="1"> 02/10/2025<br>
+    <input type="radio" name="q3" value="0"> 05/10/2025<br>
+    <input type="radio" name="q3" value="0"> 10/10/2025<br><br>
+
+    <p>4️⃣ Qual a roupa que usamos no primeiro encontro?</p>
+    <input type="radio" name="q4" value="0"> Ela: Vestido azul / Ele: Camisa preta e calça jeans<br>
+    <input type="radio" name="q4" value="1"> Ela: Macacão amarelo / Ele: Camisa branca longa e shorts<br>
+    <input type="radio" name="q4" value="0"> Ela: Saia branca / Ele: Camisa xadrez<br>
+    <input type="radio" name="q4" value="0"> Ela: Macacão rosa / Ele: Camisa cinza<br><br>
 
     <button onclick="verResultado()">Ver resultado</button>
 
@@ -122,6 +144,7 @@ footer {
     <button onclick="mostrarFinal()">Última página 💚</button>
 </div>
 
+<!-- Final -->
 <div class="section hidden" id="final">
     <div class="card">
         <h2>💌 Uma coisa é certa...</h2>
@@ -133,8 +156,33 @@ footer {
         </p>
 
         <button onclick="renovar()">Renovar contrato?</button>
-
         <p id="contrato"></p>
+    </div>
+
+    <div class="card" id="cartinha">
+        <h2>✉️ Cartinha especial</h2>
+        <p>
+        Arthur, <br><br>
+        Quatro meses parecem pouco no calendário, mas para mim carregam a certeza de muito mais do que tempo.<br><br>
+        Entre conversas simples, risadas inesperadas e silêncios confortáveis, eu encontrei algo raro: tranquilidade.<br>
+        Com você eu não preciso medir palavras, não preciso diminuir quem eu sou, não preciso fingir força.<br><br>
+        Eu me sinto em casa.<br><br>
+        E antes de dizer qualquer coisa grande, eu me fiz algumas perguntas importantes:<br><br>
+        — Se alguém disser que eu pareço com você, isso seria um elogio para mim?<br>
+        Seria. Porque eu admiro quem você é.<br><br>
+        — Eu estou totalmente completa ou só menos sozinha?<br>
+        Eu estou completa. Você não me preenche, você soma.<br><br>
+        — Eu posso ser eu mesma sem me envergonhar?<br>
+        Posso. Nunca precisei me podar ao seu lado.<br><br>
+        — Estou apaixonada por quem você é por inteiro ou só pelo lado bonito e pela ideia do que poderia ser?<br>
+        Por inteiro. Pelo que você é hoje.<br><br>
+        — Eu gostaria que minha futura filha namorasse alguém como você?<br>
+        Gostaria. Sem hesitar.<br><br>
+        E foi quando todas as respostas vieram positivas que eu entendi:<br>
+        Você não é só alguém que eu amo.<br>
+        Você é alguém que eu escolho com consciência.<br><br>
+        E escolher você tem sido a melhor decisão.
+        </p>
     </div>
 </div>
 
@@ -143,6 +191,18 @@ footer {
 </footer>
 
 <script>
+function verificarSenha() {
+    let senha = document.getElementById("inputSenha").value;
+    let erro = document.getElementById("erroSenha");
+
+    if(senha === "28/09/2025") {
+        document.getElementById("senha").classList.add("hidden");
+        document.getElementById("home").classList.remove("hidden");
+    } else {
+        erro.innerText = "Ops! Data incorreta, tente novamente.";
+    }
+}
+
 function mostrarHistoria() {
     document.getElementById("home").classList.add("hidden");
     document.getElementById("historia").classList.remove("hidden");
@@ -160,15 +220,14 @@ function mostrarFinal() {
 
 function verResultado() {
     let pontos = 0;
-    let q1 = document.querySelector('input[name="q1"]:checked');
-    let q2 = document.querySelector('input[name="q2"]:checked');
-
-    if (q1) pontos += parseInt(q1.value);
-    if (q2) pontos += parseInt(q2.value);
+    for (let i = 1; i <= 4; i++) {
+        let q = document.querySelector('input[name="q'+i+'"]:checked');
+        if(q) pontos += parseInt(q.value);
+    }
 
     let resultado = document.getElementById("resultado");
 
-    if (pontos === 2) {
+    if (pontos >= 2) {
         resultado.innerHTML = "🐸💗 Você é oficialmente o Kermit perfeito!";
     } else {
         resultado.innerHTML = "😂 Precisa rever nossos episódios imediatamente!";
