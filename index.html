@@ -3,167 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miss Pig & Kermit</title>
+<title>Miss Pig & Arthur 💗</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffd6e7, #d4f8d4);
-  overflow-x: hidden;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
-/* TELA DE SENHA */
-#login {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+body{
+  background:#f7f7f7;
+  color:#333;
 }
 
-input {
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #aaa;
-  text-align: center;
+/* LOGIN */
+#login{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ffe6f0,#e6ffe9);
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  background: #4CAF50;
-  color: white;
-  transition: 0.3s;
+#login h1{
+  margin-bottom:20px;
+  font-weight:600;
 }
 
-button:hover {
-  transform: scale(1.05);
+input{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:220px;
+  text-align:center;
 }
 
-.hidden {
-  display: none;
+button{
+  margin-top:12px;
+  padding:10px 22px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#2e7d32;
+  color:white;
+  transition:0.3s;
 }
 
-section {
-  padding: 60px 20px;
-  text-align: center;
+button:hover{
+  opacity:0.85;
 }
 
-/* Tema Muppet */
-.muppet-title {
-  font-size: 32px;
-  color: #2e7d32;
+.hidden{
+  display:none;
 }
 
-.timeline-item {
-  margin: 20px 0;
+/* CONTEÚDO */
+header{
+  padding:80px 20px;
+  text-align:center;
+  background:white;
 }
 
-.quiz-question {
-  margin: 20px 0;
+header h1{
+  font-size:32px;
+  font-weight:600;
+  color:#c2185b;
 }
 
-.final {
-  background: linear-gradient(135deg, #f8c8dc, #c8f7d4);
+section{
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
 }
 
-img {
-  max-width: 250px;
-  border-radius: 15px;
-  margin: 10px;
+.timeline-item{
+  background:white;
+  padding:20px;
+  margin:15px 0;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* Corações */
-@keyframes subir {
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
+.timeline-item strong{
+  color:#2e7d32;
 }
+
+.quiz button{
+  display:block;
+  margin:8px 0;
+  width:100%;
+}
+
+#contador{
+  font-size:20px;
+  font-weight:500;
+  text-align:center;
+}
+
+.final{
+  text-align:center;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#ffe6f0,#e6ffe9);
+}
+
+.final h2{
+  margin-bottom:20px;
+  color:#c2185b;
+}
+
 </style>
 </head>
 
 <body>
 
 <div id="login">
-  <h2>Área exclusiva do Kermit 🐸</h2>
-  <p>Dica: Dia que tudo começou</p>
-  <input type="password" id="senha" placeholder="Digite a senha">
+  <h1>Área exclusiva</h1>
+  <p>Digite a data em que tudo começou</p>
+  <input type="password" id="senha" placeholder="DDMMAAAA">
   <button onclick="verificarSenha()">Entrar</button>
-  <p id="erro" style="color:red;"></p>
+  <p id="erro" style="color:red; margin-top:10px;"></p>
 </div>
 
 <div id="conteudo" class="hidden">
 
-<section>
-  <h1 class="muppet-title">Miss Pig 🐷 & Kermit 🐸</h1>
-  <p>4 meses de caos, risadas e amor.</p>
-</section>
+<header>
+  <h1>Miss Pig & Arthur</h1>
+  <p>4 meses de nós.</p>
+</header>
 
 <section>
   <h2>Linha do Tempo</h2>
 
   <div class="timeline-item">
-    <strong>28/09/2025</strong> – Congresso, vôlei e o primeiro olhar.
+    <strong>28/09/2025</strong><br>
+    Congresso. Vôlei. O começo.
   </div>
 
   <div class="timeline-item">
-    <strong>17/10/2025</strong> – Primeiro encontro no parque de pula-pula.
+    <strong>19/10/2025</strong><br>
+    Vôlei após o primeiro encontro.
   </div>
 
   <div class="timeline-item">
-    <strong>19/10/2025</strong> – Vôlei depois do primeiro encontro.
+    <strong>26/10/2025</strong><br>
+    Segundo encontro. Pôr do sol na praia.
   </div>
 
   <div class="timeline-item">
-    <strong>26/10/2025</strong> – Segundo encontro com Victor e Sarah. Pôr do sol na praia 🌅
-  </div>
-
-  <div class="timeline-item">
-    <strong>01/11/2025</strong> – Primeiro “eu te amo” e primeiro beijo.
-  </div>
-
-  <div class="timeline-item">
-    <strong>08/11/2025</strong> – Pedido oficial e aliança 💍
+    <strong>08/11/2025</strong><br>
+    Pedido oficial 💍
   </div>
 
 </section>
 
 <section>
-  <h2>Nossas Fotos</h2>
-  <!-- SUBSTITUA pelos nomes das suas imagens -->
-  <img src="foto1.jpg">
-  <img src="foto2.jpg">
-  <img src="foto3.jpg">
-  <img src="foto4.jpg">
-</section>
+  <h2>Quiz</h2>
+  <div class="quiz">
 
-<section>
-  <h2>Memórias que importam</h2>
-
-  <div class="quiz-question">
     <p>Qual foi o primeiro filme que assistimos juntos?</p>
-    <button onclick="respostaQuiz(this,'certo')">Masterchef</button>
-    <button onclick="respostaQuiz(this,'errado')">Ela</button>
-    <button onclick="respostaQuiz(this,'errado')">Diário de uma Paixão</button>
-    <button onclick="respostaQuiz(this,'errado')">Guerra Mundial Z</button>
-  </div>
+    <button onclick="responder(this,true)">Masterchef</button>
+    <button onclick="responder(this,false)">Ela</button>
+    <button onclick="responder(this,false)">Diário de uma Paixão</button>
+    <button onclick="responder(this,false)">Guerra Mundial Z</button>
 
-  <div class="quiz-question">
-    <p>Quem disse "eu te amo" primeiro?</p>
-    <button onclick="respostaQuiz(this,'certo')">Ele</button>
-    <button onclick="respostaQuiz(this,'errado')">Ela</button>
-    <button onclick="respostaQuiz(this,'errado')">Os dois</button>
-  </div>
+    <p style="margin-top:20px;">Quem disse "eu te amo" primeiro?</p>
+    <button onclick="responder(this,true)">Ele</button>
+    <button onclick="responder(this,false)">Ela</button>
+    <button onclick="responder(this,false)">Os dois</button>
 
+  </div>
 </section>
 
 <section>
-  <h2>Estamos juntos há:</h2>
+  <h2 style="text-align:center;">Estamos juntos há:</h2>
   <p id="contador"></p>
 </section>
 
@@ -171,83 +188,56 @@ img {
   <h2>Arthur,</h2>
 
   <p>
-    Entre um pôr do sol<br>
-    e uma conversa de quinta-feira à noite,<br>
-    a gente começou algo que eu não sabia que precisava.
+  Entre um pôr do sol e uma conversa de quinta-feira à noite,<br><br>
+  a gente começou algo que eu não sabia que precisava.<br><br>
+  Você me trouxe leveza. Me trouxe certeza. Me trouxe paz.<br><br>
+  Quatro meses depois, eu só tenho uma conclusão:<br><br>
+  <strong>Foi a melhor decisão dizer sim.</strong><br><br>
+  Te amo.
   </p>
 
-  <p>
-    Você me trouxe leveza.<br>
-    Me trouxe certeza.<br>
-    Me trouxe paz.
-  </p>
+  <button onclick="renovar()">Renovar contrato vitalício</button>
+  <p id="contrato" style="margin-top:15px;"></p>
 
-  <p>
-    Quatro meses depois,<br>
-    eu só tenho uma conclusão:
-  </p>
-
-  <p><strong>Foi a melhor decisão dizer sim.</strong></p>
-
-  <h3>Te amo.</h3>
-
-  <button onclick="renovarContrato()">Renovar contrato vitalício 💍</button>
-
-  <div id="respostaFinal"></div>
 </section>
 
 </div>
 
 <script>
-function verificarSenha() {
-  const senha = document.getElementById("senha").value;
-  if (senha === "28092025") {
-    document.getElementById("login").style.display = "none";
+function verificarSenha(){
+  if(document.getElementById("senha").value==="28092025"){
+    document.getElementById("login").style.display="none";
     document.getElementById("conteudo").classList.remove("hidden");
   } else {
-    document.getElementById("erro").innerText = "Senha errada, Miss Pig está de olho 👀🐷";
+    document.getElementById("erro").innerText="Senha incorreta.";
   }
 }
 
-function respostaQuiz(botao, status) {
-  if(status === 'certo') {
-    botao.style.background = "#4CAF50";
-  } else {
-    botao.style.background = "#f44336";
-  }
+function responder(botao, correto){
+  botao.style.background=correto?"#2e7d32":"#c62828";
 }
 
-function renovarContrato() {
-  const resposta = document.getElementById("respostaFinal");
-  resposta.innerHTML = "Contrato renovado com sucesso.<br>Vigência: enquanto houver amor. 💚";
-  
-  for (let i = 0; i < 20; i++) {
-    let coracao = document.createElement("div");
-    coracao.innerHTML = "💗";
-    coracao.style.position = "fixed";
-    coracao.style.left = Math.random() * 100 + "vw";
-    coracao.style.bottom = "0";
-    coracao.style.fontSize = "20px";
-    coracao.style.animation = "subir 3s linear forwards";
-    document.body.appendChild(coracao);
+function atualizarContador(){
+  const inicio=new Date("2025-11-08T00:00:00").getTime();
+  const agora=new Date().getTime();
+  const diff=agora-inicio;
 
-    setTimeout(() => {
-      coracao.remove();
-    }, 3000);
-  }
+  const dias=Math.floor(diff/(1000*60*60*24));
+  const horas=Math.floor((diff/(1000*60*60))%24);
+  const minutos=Math.floor((diff/(1000*60))%60);
+  const segundos=Math.floor((diff/1000)%60);
+
+  document.getElementById("contador").innerText=
+  dias+" dias, "+horas+" horas, "+minutos+" minutos e "+segundos+" segundos";
 }
 
-/* Contador */
-function atualizarContador() {
-  const inicio = new Date("2025-11-08T00:00:00");
-  const agora = new Date();
-  const diff = agora - inicio;
+setInterval(atualizarContador,1000);
+atualizarContador();
 
-  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("contador").innerText = dias + " dias";
+function renovar(){
+  document.getElementById("contrato").innerText=
+  "Contrato renovado com sucesso. Vigência: vitalício.";
 }
-
-setInterval(atualizarContador, 1000);
 </script>
 
 </body>
